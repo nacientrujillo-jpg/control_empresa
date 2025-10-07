@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Lista de Departamentos</h1>
+
+<a href="{% url 'control:departamento_create' %}" class="btn">➕ Nuevo Departamento</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in departamentos %}
+        <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.nombre }}</td>
+            <td>
+                <a href="{% url 'control:departamento_update' d.id %}" class="btn btn-edit">Editar</a>
+                <a href="{% url 'control:departamento_delete' d.id %}" class="btn btn-delete">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No hay departamentos registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="/" class="btn btn-back">🏠 Volver al inicio</a>
+{% endblock %}

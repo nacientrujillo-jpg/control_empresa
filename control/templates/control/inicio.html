@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Empresarial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #005C97, #363795);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.1rem; margin-bottom: 2rem; }
+        .btn {
+            background: white;
+            color: #363795;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #f1f1f1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Control Empresarial</h1>
+    <p>Selecciona una opción para comenzar:</p>
+    <div>
+        <a href="{% url 'control:departamento_list' %}" class="btn">Departamentos</a>
+        <a href="{% url 'control:empleado_list' %}" class="btn">Empleados</a>
+        <a href="/admin/" class="btn">Administración</a>
+    </div>
+</body>
+</html>

@@ -1,9 +1,12 @@
 from django.urls import path
 from . import views
 
-app_name = "control"
+app_name = 'control'
 
 urlpatterns = [
+    # Página de inicio
+    path('', views.inicio, name='inicio'),
+
     # Departamentos
     path("departamentos/", views.DepartamentoListView.as_view(), name="departamento_list"),
     path("departamentos/nuevo/", views.DepartamentoCreateView.as_view(), name="departamento_create"),
