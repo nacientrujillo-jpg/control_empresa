@@ -102,12 +102,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Tipo de clave primaria
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-✅ Luego, haz estos comandos
-En la terminal (dentro del entorno virtual):
 
-bash
-Copiar código
-pip install dj-database-url python-dotenv whitenoise psycopg2-binary
-git add empresa/settings.py
-git commit -m "Configuración final settings.py para Render"
-git push origin main
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(default=os.getenv('DATABASE_URL'))
+
